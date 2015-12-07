@@ -1,0 +1,50 @@
+background yes  # 是否嵌入桌面，“no”表示不嵌入；“yes”表示嵌入
+alignment bottom_left  # 在屏幕上的位置
+double_buffer yes
+
+border_width 0  # 边框线宽度
+default_color E0E0E0  # 设置默认颜色
+default_outline_color white  # 默认边线的颜色
+default_shade_color white  # 默认阴影的颜色
+draw_borders no  # 是否使用边框线
+draw_outline no  # 是否使用边线，即字体边线加上边线
+draw_shades no  #是否使用阴影
+
+# 距离屏幕边界的像素值
+gap_x 20  
+gap_y 10
+
+no_buffers yes  # 清除内存中缓存的文本
+out_to_console no  # 是否在终端输出
+out_to_stderr no
+extra_newline no
+
+minimum_size 260 220  # 设置窗口最小尺寸
+update_interval 1.0   # 刷新间隔时间，单位为秒
+total_run_times 0
+uppercase no  # 大写变换
+use_spacer none  # 增加部件周围空间
+
+show_graph_scale no
+show_graph_range no
+
+# 解决Conky和桌面图标的冲突问题
+own_window yes
+own_window_type normal
+own_window_transparent yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+own_window_colour 000000
+own_window_argb_visual yes
+own_window_argb_value 0
+
+# 自定义字体
+use_xft yes  
+xftalpha 0.1
+xftfont Droid Sans:size=12
+color0 white
+color1 EAEAEA
+color2 FFA300
+color3 grey
+
+TEXT
+${offset 0}${voffset -10}${font monofur:pixelsize=25}${color 4eafec}To do list:${offset 10}${font monofur:pixelsize=15}${color E0E0E0}${tail ./todo.txt 5}
